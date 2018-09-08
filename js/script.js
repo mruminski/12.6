@@ -19,7 +19,13 @@ var showResults = function(response) {
   list.innerHTML = '';
   Array.prototype.forEach.call(response, function(item) {
     var li = document.createElement('li');
-    li.innerText = item.name + ' Capital: '  + item.capital;
+    
+    if (!item.name.length) { item.name = 'no data'; }
+    if (!item.subregion.length) { item.subregion = 'no data'; }
+    if (!item.capital.length) { item.capital = 'no data'; }
+
+    li.innerHTML = '<b>country</b>: '+ item.name +' <b>region</b>: '+
+    item.subregion+' <b>capital</b>: '+ item.capital;
     list.appendChild(li);
   })
 }
