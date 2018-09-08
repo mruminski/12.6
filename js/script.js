@@ -1,6 +1,4 @@
 var url = 'https://restcountries.eu/rest/v1/name/';
-
-
 var list = document.querySelector('.container__list');
 
 document.querySelector('.container__button').addEventListener('click', function() {
@@ -17,3 +15,11 @@ var search = function() {
   .then(showResults);
 }
 
+var showResults = function(response) {
+  list.innerHTML = '';
+  Array.prototype.forEach.call(response, function(item) {
+    var li = document.createElement('li');
+    li.innerText = item.name + ' Capital: '  + item.capital;
+    list.appendChild(li);
+  })
+}
