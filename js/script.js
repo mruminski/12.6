@@ -17,7 +17,7 @@ var search = function() {
 
 var showResults = function(response) {
   list.innerHTML = '';
-  Array.prototype.forEach.call(response, function(item) {
+  response.forEach(function(item) {
     var li = document.createElement('li');
     
     if (!item.name.length) { item.name = 'no data'; }
