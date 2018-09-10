@@ -1,8 +1,11 @@
 var url = 'https://restcountries.eu/rest/v1/name/';
 var list = document.querySelector('.container__list');
 
-document.querySelector('.container__button').addEventListener('click', function() {
-  search();
+document.addEventListener('DOMContentLoaded', function() { 
+  document.querySelector('.container__button')
+  .addEventListener('click', function() {
+    search();
+  });
 });
 
 var search = function() {
